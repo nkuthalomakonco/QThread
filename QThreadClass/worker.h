@@ -9,7 +9,7 @@ class Worker : public QObject
 {
     Q_OBJECT
 public:
-    explicit Worker(QObject *parent = nullptr);
+    Worker();
 
 public slots:
     void doWork(const QString &parameter);
