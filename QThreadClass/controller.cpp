@@ -3,7 +3,6 @@
 
 Controller::Controller() {
     Worker *worker = new Worker;
-    //worker->setObjectName("Worker Thread");
     worker->moveToThread(&workerThread);
     connect(&workerThread, &QThread::finished, worker, &QObject::deleteLater);
     connect(this, &Controller::operate, worker, &Worker::doWork);
